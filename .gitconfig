@@ -6,3 +6,4 @@ email = yassel.piloto@BOS-84LT433.duckcreek.com
 [alias]
 st = status -sb
 ci = commit
+shove = "!git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\""
