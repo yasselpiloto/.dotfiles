@@ -121,3 +121,11 @@ alias config='/usr/bin/git --git-dir=/Users/yassel.piloto/.dotfiles/ --work-tree
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# optimize git autocomplete
+__git_files () { 
+    _wanted files expl 'local files' _files     
+}
+
+# PATH
+export PATH=$PATH:$HOME/bin:$HOME/bin/scripts
