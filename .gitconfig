@@ -1,0 +1,8 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+name = Pilo
+email = yassel.piloto@BOS-84LT433.duckcreek.com
+[alias]
+st = status -sb
+ci = commit
