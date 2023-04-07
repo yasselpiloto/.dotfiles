@@ -49,13 +49,27 @@ local audioChooser = hs.chooser.new(function(choice)
     return
   end
   
-  local idx = choice["idx"]
+  -- get output device
+  local output_idx = choice["idx"]
   local name = choice["text"]
-  dev = hs.audiodevice.allOutputDevices()[idx]
-  if not dev:setDefaultOutputDevice() then
-    hs.alert.show("Unable to enable audio output device " .. name)
+  output = hs.audiodevice.allOutputDevices()[output_idx]
+  
+  -- get input device id based on the choosen name
+  local input
+
+  for id, device in pairs(hs.audiodevice.allInputDevices()) do
+    
+    if device:name() == name then
+      local input_idx = device:uid()
+      input = device
+      break
+    end
+  end
+
+  if not (output:setDefaultOutputDevice() and input:setDefaultInputDevice()) then
+    hs.alert.show("Unable to enable audio device " .. name)
   else
-    hs.alert.show("Audio output device is now: " .. name)
+    hs.alert.show("Audio device is now: " .. name)
   end
 end)
 
