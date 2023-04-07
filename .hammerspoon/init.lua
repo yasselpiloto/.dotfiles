@@ -2,6 +2,11 @@
 hs.loadSpoon("ReloadConfiguration")
 spoon.ReloadConfiguration:start()
 
+-- load caffeine
+hs.loadSpoon("Caffeine")
+spoon.Caffeine:bindHotkeys({toggle = {{"cmd", "alt", "ctrl", "shift"}, "C"},})
+spoon.Caffeine:start()
+
 -- show / hide terminal
 hs.hotkey.bind({"alt"}, "`", function()
   local alacritty = hs.application.find('alacritty')
@@ -55,16 +60,10 @@ local audioChooser = hs.chooser.new(function(choice)
   output = hs.audiodevice.allOutputDevices()[output_idx]
   
   -- get input device id based on the choosen name
-  local input
-
-  for id, device in pairs(hs.audiodevice.allInputDevices()) do
-    
-    if device:name() == name then
-      local input_idx = device:uid()
-      input = device
-      break
-    end
-  end
+  
+  local input = hs.fnutils.find(hs.audiodevice.allInputDevices(), function(device)
+    return device:name() == name
+  end)
 
   if not (output:setDefaultOutputDevice() and input:setDefaultInputDevice()) then
     hs.alert.show("Unable to enable audio device " .. name)
@@ -77,21 +76,3 @@ audioChooser:choices(audiochoices)
 hs.hotkey.bind({"cmd", "alt"}, "A", function()
   audioChooser:show()
 end)
-
-
--- caffeinate
-
-hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "I", function()
-  hs.caffeinate.set("displayIdle", true, true)
-  hs.caffeinate.set("systemIdle", true, true)
-  hs.caffeinate.set("system", true, true)
-  hs.alert.show("Preventing Sleep")
-end)
-
-hs.hotkey.bind({"cmd", "alt", "ctrl", "shift"}, "O", function()
-  hs.caffeinate.set("displayIdle", false, true)
-  hs.caffeinate.set("systemIdle", false, true)
-  hs.caffeinate.set("system", false, true)
-  hs.alert.show("Allowing Sleep")
-end)
-
