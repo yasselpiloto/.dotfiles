@@ -21,6 +21,7 @@ email = yassel.piloto@duckcreek.com
 st = status -sb
 ci = commit
 shove = "!git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\""
+
 [gcrypt]
-	gpg-args = --use-agent
-	publish-participants = true
+gpg-args = --use-agent
+publish-participants = true
