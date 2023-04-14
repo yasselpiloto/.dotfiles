@@ -1,10 +1,12 @@
+hyper = {"cmd", "alt", "ctrl", "shift"}
+
 -- reload hs configuration on change
 hs.loadSpoon("ReloadConfiguration")
 spoon.ReloadConfiguration:start()
 
 -- load caffeine
 hs.loadSpoon("Caffeine")
-spoon.Caffeine:bindHotkeys({toggle = {{"cmd", "alt", "ctrl", "shift"}, "C"},})
+spoon.Caffeine:bindHotkeys({toggle = {hyper, "C"},})
 spoon.Caffeine:start()
 
 -- show / hide terminal
@@ -76,3 +78,13 @@ audioChooser:choices(audiochoices)
 hs.hotkey.bind({"cmd", "alt"}, "A", function()
   audioChooser:show()
 end)
+
+-- move window to next screen
+function moveToNextScreen()
+  local app = hs.window.focusedWindow()
+  app:moveToScreen(app:screen():next())
+  app:maximize()
+end
+
+hs.hotkey.bind(hyper, "left", moveToNextScreen)
+hs.hotkey.bind(hyper, "right", moveToNextScreen)
