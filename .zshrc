@@ -154,5 +154,5 @@ then
   compinit
 fi
 
-# az automcompletion
-source /usr/local/etc/bash_completion.d/az
+# custom tools
+source $HOME/.config/scripts/custom.sh
