@@ -15,3 +15,7 @@ function revault {
   export GOOGLE_APPLICATION_CREDENTIALS=$HOME/.secret/vault.json
 	vault login -method=gcp role=vault credentials=/Users/jazz/.secret/@vault.json project=home-214701 service_account=vault-694@home-214701.iam.gserviceaccount.com
 }
+
+# tools
+alias tf=terraform
+alias k=kubectl
