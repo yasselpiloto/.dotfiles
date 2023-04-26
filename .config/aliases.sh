@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 alias aliases='nvim $HOME/.config/aliases.sh'
+alias customs='vim $HOME/.config/scripts/custom.sh'
 alias realias='source $HOME/.config/aliases.sh'
 alias vim=nvim
 alias vi=nvim

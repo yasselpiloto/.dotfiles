@@ -25,3 +25,5 @@ shove = "!git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\""
 [gcrypt]
 gpg-args = --use-agent
 publish-participants = true
+[gpg]
+	program = /usr/local/bin/gpg

@@ -1,3 +1,6 @@
+# gpg this needs to be at the top of zshrc before powershell10k's silent prompt kicks in
+export GPG_TTY=$(tty)
+
 if [ "$TMUX" = "" ]; then tmux; fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -142,8 +145,6 @@ source $HOME/.config/aliases.sh
 # autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-# gpg
-export GPG_TTY=$(tty)
 
 # brew autocompletions
 if type brew &>/dev/null
