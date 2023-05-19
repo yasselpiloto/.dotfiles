@@ -16,5 +16,6 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 require('plugins')
+require('nvim-tree-config')
 
 require('nvim-tree').setup {}
