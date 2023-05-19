@@ -35,7 +35,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 #### zsh-syntax-highlighting
 
 ```bash
-brew install zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
 ### Local configuration
@@ -43,6 +43,38 @@ brew install zsh-syntax-highlighting
 ```bash
 mkdir -p $HOME/.config/scripts
 touch $HOME/.config/scripts/custom.sh
+```
+
+## Tools
+
+```bash
+# bat
+brew install bat
+
+# tmux
+brew install tmux
+
+# ag
+brew install the_silver_searcher
+
+# fzf
+brew install fzf
+## To install useful key bindings and fuzzy completion:
+$(brew --prefix)/opt/fzf/install
+
+
+```
+
+### nvim
+
+```bash
+brew install neovim
+
+# Packer
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+ # Open nvim and then run command :PackerInstall
 ```
 
 ## Setup
