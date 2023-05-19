@@ -1,5 +1,33 @@
 # Initial setup
 
+## Prerequisites
+
+### Brew
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+### Zsh
+```bash
+brew install zsh
+chsh -s /usr/local/bin/zsh
+```
+
+### Oh-My-Zsh
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+### PowerLevel10K
+```bash
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+
+Then Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`.
+
+## Setup
+
 ```bash
 git init --bare $HOME/.dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
