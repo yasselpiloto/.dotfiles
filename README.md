@@ -38,6 +38,13 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 brew install zsh-syntax-highlighting
 ```
 
+### Local configuration
+
+```bash
+mkdir -p $HOME/.config/scripts
+touch $HOME/.config/scripts/custom.sh
+```
+
 ## Setup
 
 ```bash
