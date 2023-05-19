@@ -24,7 +24,19 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
-Then Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`.
+### Zsh plugins
+
+#### zsh-autosuggestions
+
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+
+#### zsh-syntax-highlighting
+
+```bash
+brew install zsh-syntax-highlighting
+```
 
 ## Setup
 
