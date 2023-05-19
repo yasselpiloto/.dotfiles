@@ -9,6 +9,9 @@ alias cat=bat
 alias ll='ls -lah'
 alias rep='pbpaste | pbcopy'
 alias k=kubectl
+alias python=python3.11
+alias dc='cd ~/dev/github.com/duck-creek'
+alias repo='open $(git config --get remote.origin.url | sed "s/git@github.com:/https:\/\/github.com\//" | sed "s/.git$//")'
 
 # vault login
 function revault {
@@ -20,3 +23,6 @@ function revault {
 # tools
 alias tf=terraform
 alias k=kubectl
+
+# az
+alias azps='az pipelines list --folder-path $(az pipelines folder list | fzf)'
