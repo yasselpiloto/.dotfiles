@@ -19,3 +19,9 @@ require('plugins')
 require('nvim-tree-config')
 
 require('nvim-tree').setup {}
+
+-- keymaps 
+local map_util = require ('keymaps')
+local nnoremap = map_util.nnoremap
+
+nnoremap("<leader>1", ":NvimTreeToggle<CR>", gen_opts)
