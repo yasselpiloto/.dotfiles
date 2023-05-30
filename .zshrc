@@ -134,7 +134,7 @@ __git_files () {
 }
 
 # PATH
-export PATH=$PATH:$HOME/bin:$HOME/bin/scripts
+export PATH=$PATH:$HOME/bin:$HOME/bin/scripts:/opt/homebrew/opt/python@3.11/libexec/bin:$HOME/Library/Python/3.11/lib/python/site-packages
 
 # ALIASES
 source $HOME/.config/aliases.sh
